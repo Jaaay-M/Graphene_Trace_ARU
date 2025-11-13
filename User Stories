@@ -1,0 +1,14 @@
+User Stories
+
+Doctor:
+1. "I want to be able to keep record of the user’s health and monitor the pressure levels to prevent ulcers"
+
+Patient:
+1. “I want to be able to login and see the pressure metrics highlighting the critical points so that I can make necessary changes, or so I can speak to the doctor about it.”
+2. “I also want to be able to contact the doctor”
+
+Carers:
+1. "I want to be able to login and view the patient’s dashboard and have an idea of where the critical pressure points are so I can take that into consideration during care and provide         appropriate service."
+
+Admin:
+1. “I want to have access to the graphene trace software, to be able to monitor it’s performance, implement changes based on checks performed to ensure accuracy, and add new features when       necessary”.
