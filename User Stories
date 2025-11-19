@@ -2,6 +2,9 @@
 
 Doctor:
 1. "I want to be able to keep record of the user’s health and monitor the pressure levels so that I can prevent ulcers"
+2.“I want to be able to contact the patients or their carers”
+3.“I want to be able to give suggestions to the patient to manage the pressure.
+
 
 Patient:
 1. “I want to be able to login and see the pressure metrics highlighting the critical points so that I can make necessary changes"
