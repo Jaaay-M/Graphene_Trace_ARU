@@ -1,6 +1,64 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="https://framerusercontent.com/images/pL2vwGqbZlaEGRev1OpCd6aKRk.png?width=1031&height=316" alt="Sensore by Graphene Trace">
+            <p class="location">Nairobi, Kenya</p>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-item">Patient Overview</a>
+            <a href="#" class="nav-item active">Doctor’s Notes</a>
+        </nav>
+
+        <div class="bottom-links">
+            <a href="#" class="nav-item">Settings</a>
+            <a href="#" class="nav-item">Log Out</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <div class="top-bar"></div>
+
+        <h1 class="page-title">Doctor’s Notes</h1>
+
+        <!-- Patient Info Card -->
+        <div class="card">
+            <h2 class="card-title">Patient Information</h2>
+
+            <div class="grid-2">
+                <input type="text" placeholder="Patient Name">
+                <input type="text" placeholder="Title">
+            </div>
+
+            <div class="grid-2">
+                <input type="text" placeholder="Gender">
+                <input type="text" placeholder="Patient ID">
+            </div>
+        </div>
+
+        <!-- Notes Card -->
+        <div class="card">
+            <h2 class="card-title">Notes</h2>
+
+            <input type="text" placeholder="Doctor's Name">
+
+            <label class="label">Medical Notes</label>
+            <textarea rows="4">Patient appears stable with no acute distress. Mild symptoms observed; advised monitoring at home. Vital signs within normal range.</textarea>
+        </div>
+
+    </main>
+
+</body>
+</html>
