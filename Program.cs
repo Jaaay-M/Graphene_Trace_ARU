@@ -1,5 +1,9 @@
 using Graphene_Trace.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore; // Add this using directive
+// Add the following using directive to enable AddDefaultIdentity extension method
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +12,10 @@ builder.Services.AddControllersWithViews();
 // Add DbContext with SQL Server provider
 builder.Services.AddDbContext<userdata>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBStringConnection")));
+
+// Fix: AddDefaultIdentity is a generic method and should be called with parentheses, not angle brackets
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<userdata>();
 
 var app = builder.Build();
 
@@ -24,9 +32,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthorization();
+app.UseAuthentication();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapRazorPages();
 
 app.Run();
