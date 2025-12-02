@@ -18,7 +18,7 @@ namespace Graphene_Trace.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult LogIn()
         {
             return View();
         }
