@@ -8,5 +8,10 @@ namespace Graphene_Trace.Controllers
         {
             return View("Doctor-Notes");
         }
+
+        public ActionResult PatientOverview()
+        {
+            return View("Patient-Overview");
+        }
     }
 }

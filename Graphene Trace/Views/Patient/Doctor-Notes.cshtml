@@ -15,12 +15,11 @@
         </div>
 
         <nav>
-            <a href="#" class="nav-item">Patient Overview</a>
-            <a href="#" class="nav-item active">Doctor’s Notes</a>
+            <a class="nav-item" asp-area="" asp-controler="Patient" asp-action="PatientOverview">Patient Overview</a>
+            <a class="nav-item active">Doctor’s Notes</a>
         </nav>
 
         <div class="bottom-links">
-            <a href="#" class="nav-item">Settings</a>
             <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Index">Log Out</a>
         </div>
     </aside>
