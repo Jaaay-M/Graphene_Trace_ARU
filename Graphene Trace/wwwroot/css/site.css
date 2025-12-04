@@ -66,15 +66,15 @@ nav {
     margin-top: auto;
 }
 
-/* --- Main Area --- */
+/* --- Doctor Notes --- */
 .content {
     flex-grow: 1;
     padding: 20px 60px;
 }
 
 .content {
-    margin-left: 240px; /* this matches .sidebar width */
-    padding: 32px 60px;
+    margin-left: 260px;
+    padding: 32px 10px;
     box-sizing: border-box;
     min-height: 100vh;
 }
@@ -91,8 +91,8 @@ nav {
     margin-bottom: 25px;
     border-radius: 10px;
     border: 1px solid #e0e0e0;
-    max-width: 900px; /* constrain width */
-    margin-left: auto; /* center */
+    margin-left: 0;
+    margin-right: 0;
     margin-right: auto;
     position: relative;
     z-index: 5;
@@ -133,4 +133,46 @@ input, textarea {
     margin: 15px 0 8px;
     color: #666;
     font-size: 14px;
+}
+
+/* --- Patient-Overview ---*/
+
+.patient-info > div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.status-box {
+    background: #eef0ff;
+    padding: 15px;
+    width: 220px;
+    border-radius: 8px;
+    gap: 60px;
+    margin-top: 0;
+}
+
+.alert-btn {
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: #d7ddff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.details-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 25px;
 }
