@@ -30,9 +30,14 @@ namespace Sensore_Database.Controllers
             return View();
         }
 
-        /* public IActionResult Index()
-         {
-             return View();
-         }*/
+        public ActionResult DoctorNotes()
+        {
+            return View("Doctor-Notes");
+        }
+
+        public ActionResult PatientOverview()
+        {
+            return View("Patient-Overview");
+        }
     }
 }
