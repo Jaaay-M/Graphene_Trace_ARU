@@ -35,8 +35,13 @@ namespace Sensore_Database.Controllers
             return View("Doctor-Notes");
         }
 
-        public ActionResult PatientOverview()
+        public IActionResult PatientOverview(int id)
         {
+            var patient = appDBContext.Patients.FirstOrDefault(p => p.Id == id);
+
+        if (patient == null)
+            return NotFound();
+
             return View("Patient-Overview");
         }
     }

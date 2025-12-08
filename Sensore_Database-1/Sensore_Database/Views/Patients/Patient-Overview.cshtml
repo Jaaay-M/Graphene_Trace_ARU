@@ -1,3 +1,5 @@
+@model Patient
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,20 +38,20 @@
             <section class="patient-info">
 
                 <div>
-                    <h2>Name</h2>
-                    <p>Age, Gender</p>
+                    <h2>@Model.FirstName @Model.LastName</h2>
+                    <p>@Model.DateOfBirth</p>
 
                     <div class="status-box">
                         <font size = 4><strong>Current Status</strong><br> </font>
-                        <b>Doctor:</b><br>
+                        <b>Doctor ID: @Model.DoctorId</b><br>
                         <button class="alert-btn"><b>Alert History</b></button>
                     </div>
 
                     <div class="details-grid">
-                        <div><strong>Patient ID</strong><br>12345</div>
-                        <div><strong>Phone</strong><br>0704 555-0127</div>
+                        <div><strong>Patient ID</strong><br>@Model.Id</div>
+                        <div><strong>Phone</strong><br>@Model.PhoneNumber</div>
                         <div><strong>Gender</strong><br>Female</div>
-                        <div><strong>Email</strong><br>AliceMwangi123@gmail.com</div>
+                        <div><strong>Email</strong><br>@Model.Email</div>
                     </div>
                 </div>
             </section>
