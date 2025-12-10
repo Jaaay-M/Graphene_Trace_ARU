@@ -15,6 +15,6 @@
 
         public List<Feedback> Feedbacks { get; set; } = new List<Feedback>();
 
-
+        public List<int[,]> SensorFrames { get; set; }
     }
 }

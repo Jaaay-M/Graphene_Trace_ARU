@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Sensore_Database.Data;
+using Sensore_Database.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<SensorCsvParser>();
 
 builder.Services.AddDbContext<AppDBContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DBStringConnection")));

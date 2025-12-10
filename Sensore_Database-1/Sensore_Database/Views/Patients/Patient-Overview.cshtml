@@ -1,4 +1,4 @@
-@model Patient
+@model PatientOverviewViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,23 +38,62 @@
             <section class="patient-info">
 
                 <div>
-                    <h2>@Model.FirstName @Model.LastName</h2>
-                    <p>@Model.DateOfBirth</p>
+                    <h2>Name</h2>
+                    <p>Age, Gender</p>
 
                     <div class="status-box">
                         <font size = 4><strong>Current Status</strong><br> </font>
-                        <b>Doctor ID: @Model.DoctorId</b><br>
+                        <b>Doctor:</b><br>
                         <button class="alert-btn"><b>Alert History</b></button>
                     </div>
 
                     <div class="details-grid">
-                        <div><strong>Patient ID</strong><br>@Model.Id</div>
-                        <div><strong>Phone</strong><br>@Model.PhoneNumber</div>
+                        <div><strong>Patient ID</strong><br>12345</div>
+                        <div><strong>Phone</strong><br>0704 555-0127</div>
                         <div><strong>Gender</strong><br>Female</div>
-                        <div><strong>Email</strong><br>@Model.Email</div>
+                        <div><strong>Email</strong><br>AliceMwangi123@gmail.com</div>
                     </div>
                 </div>
             </section>
+<!-- Heatmap Display -->
+@if (Model.SensorFrames != null && Model.SensorFrames.Count > 0)
+{
+    <h2>Sensor Heatmap</h2>
+    var frame = Model.SensorFrames[0];
 
+    <div class="heatmap">
+        @for (int r = 0; r < 32; r++)
+        {
+            for (int c = 0; c < 32; c++)
+            {
+                int value = frame[r, c];
+                string color = $"rgb({value}, 0, {255 - value})";
+
+                <div class="cell" style="background-color:@color"></div>
+            }
+        }
+    </div>
+}
+else
+{
+    <p>No sensor data available for this patient.</p>
+}
+
+<style>
+    .heatmap {
+        display: grid;
+        grid-template-columns: repeat(32, 12px);
+        grid-template-rows: repeat(32, 12px);
+        gap: 1px;
+        margin-top: 20px;
+        border: 1px solid #ddd;
+        width: fit-content;
+    }
+
+    .cell {
+        width: 12px;
+        height: 12px;
+    }
+</style>
 </body>
 </html>
