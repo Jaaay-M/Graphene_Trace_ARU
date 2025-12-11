@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Sensore_Database.Data;
 using Sensore_Database.Models;
 
 namespace Sensore_Database.Controllers
 {
-    public class DoctorsController : Controller
+    public class AdminController : Controller
     {
         private readonly AppDBContext appDBContext;
-        public DoctorsController(AppDBContext context)
+        public AdminController(AppDBContext context)
         {
             appDBContext = context;
         }
@@ -18,27 +18,14 @@ namespace Sensore_Database.Controllers
             return View(Doctor);
         }
         [HttpPost]
-        public async Task<IActionResult> AddDoctor(Doctor Doctor)
+        public async Task<IActionResult> CreateDoctor(Doctor doctor)
         {
-            appDBContext.Add(Doctor);
+            appDBContext.Add(doctor);
             await appDBContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
-        public IActionResult AddDoctor()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreatePatient(Patient patient)
-        {
-            appDBContext.Add(patient);
-            await appDBContext.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-        [HttpGet]
-        public IActionResult CreatePatient()
+        public IActionResult CreateDoctor()
         {
             return View();
         }
