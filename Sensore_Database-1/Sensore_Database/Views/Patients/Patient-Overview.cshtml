@@ -38,20 +38,20 @@
             <section class="patient-info">
 
                 <div>
-                    <h2>Name</h2>
-                    <p>Age, Gender</p>
+                    <h2>@Model.Patient.FirstName, @Model.Patient.LastName</h2>
+                    <p>@Model.Patient.DateOfBirth</p>
 
                     <div class="status-box">
                         <font size = 4><strong>Current Status</strong><br> </font>
-                        <b>Doctor:</b><br>
+                        <b>Doctor: @Model.Patient.PrimaryDoctor</b><br>
                         <button class="alert-btn"><b>Alert History</b></button>
                     </div>
 
                     <div class="details-grid">
-                        <div><strong>Patient ID</strong><br>12345</div>
-                        <div><strong>Phone</strong><br>0704 555-0127</div>
-                        <div><strong>Gender</strong><br>Female</div>
-                        <div><strong>Email</strong><br>AliceMwangi123@gmail.com</div>
+                        <div><strong>Patient ID</strong><br>@Model.Patient.Id</div>
+                        <div><strong>Phone</strong><br>@Model.Patient.PhoneNumber</div>
+                        <div><strong>Address</strong><br>@Model.Patient.Address</div>
+                        <div><strong>Email</strong><br>@Model.Patient.Email</div>
                     </div>
                 </div>
             </section>
