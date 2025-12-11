@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Doctor
+
+<h1>Add a new Doctor</h1>
+
+<form asp-action="CreateDoctor" method="post"> 
+  
+    <div class="form-group" >
+   <label> First Name </label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Last Name </label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Email </label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label> Phone Number </label>
+        <input asp-for="PhoneNumber" class="form-control" />
+    </div>
+
+    <input type="submit" value="Create Doctor" class="btn btn-primary" />
+
+</form>

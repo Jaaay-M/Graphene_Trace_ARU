@@ -14,20 +14,25 @@ namespace Sensore_Database.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var Doctor = await appDBContext.Doctors.ToListAsync();
-            return View(Doctor);
+            var Patient = await appDBContext.Patients.ToListAsync();
+            return View(Patient);
         }
         [HttpPost]
-        public async Task<IActionResult> AddDoctor(Doctor Doctor)
+        public async Task<IActionResult> CreatePatient(Patient patient)
         {
-            appDBContext.Add(Doctor);
+            appDBContext.Add(patient);
             await appDBContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
-        public IActionResult AddDoctor()
+        public IActionResult CreatePatient()
         {
             return View();
+        }
+        /*public async Task<IActionResult> PatientsList()
+        {
+            var patients = await appDBContext.Patients.ToListAsync();
+            return View(patients);
         }
 
         [HttpPost]
@@ -41,7 +46,7 @@ namespace Sensore_Database.Controllers
         public IActionResult CreatePatient()
         {
             return View();
-        }
+        }*/
         /*public IActionResult Index()
         {
             return View();
