@@ -18,14 +18,14 @@ namespace Sensore_Database.Controllers
             return View(Doctor);
         }
         [HttpPost]
-        public async Task<IActionResult> AddDoctor(Doctor doctor)
+        public async Task<IActionResult> CreateDoctor(Doctor doctor)
         {
             appDBContext.Add(doctor);
             await appDBContext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
-        public IActionResult AddDoctor()
+        public IActionResult CreateDoctor()
         {
             return View();
         }
